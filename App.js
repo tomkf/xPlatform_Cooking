@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, FlatList, SafeAreaView } from 'react-native';        
-import RecipeItem from './components/RecipeItem'
+import RecipeItem from './src/components/RecipeItem'
 
 export default function App() {
   const recipes = [
