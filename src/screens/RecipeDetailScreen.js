@@ -7,12 +7,13 @@ const RecipeDetailScreen = ({ route }) => {
   return (
     <SafeAreaView style={styles.container}>
       <Image source={{ uri: imageURL}} style={styles.image} />
-      <Text>{ title }</Text>
+      <Text style={styles.heading}>{ title }</Text>
+      <Text style={styles.heading}>Steps</Text>
       <FlatList
         data={steps}
         keyExtractor={item => item}
         renderItem={({ item }) => {
-          return <Text>{item}</Text>;
+          return <Text style={styles.stepItem}>{item}</Text>;
         }} />
     </SafeAreaView>
   );
@@ -23,11 +24,21 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'stretch',
-    justifyContent: 'center',
+    justifyContent: 'center'
+  },
+
+  heading: {
+    fontWeight: 'bold',
+    paddingTop: 10,
+    paddingLeft: 10
   },
   image: {
-    width: 200,
-    height: 200
+    height: 250
+  },
+  stepItem: {
+    paddingTop: 10,
+    paddingBottom: 10,
+    paddingLeft: 20
   }
 });
 
