@@ -1,10 +1,19 @@
 import React from 'react';
-import { StyleSheet, Text, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, SafeAreaView, Image, FlatList } from 'react-native';
 
-const RecipeDetailScreen = () => {
+const RecipeDetailScreen = ({ route }) => {
+  const { title, imageURL, steps } = route.params
+
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Detail!</Text>
+      <Image source={{ uri: imageURL}} style={styles.image} />
+      <Text>{ title }</Text>
+      <FlatList
+        data={steps}
+        keyExtractor={item => item}
+        renderItem={({ item }) => {
+          return <Text>{item}</Text>;
+        }} />
     </SafeAreaView>
   );
 }
@@ -15,6 +24,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'stretch',
     justifyContent: 'center',
+  },
+  image: {
+    width: 200,
+    height: 200
   }
 });
 

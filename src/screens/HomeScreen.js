@@ -16,14 +16,14 @@ const HomeScreen = ({ navigation }) => {
     data={recipes}
     renderItem={({ item }) => {
       
-      const showDetail = () => {
-        navigation.navigate('RecipeDetails')
+      const showDetail = (recipe) => {
+        navigation.navigate('RecipeDetails', recipe);
       }
       
       return(
-        <TouchableOpacity onPress={() => showDetail()}>
-        <RecipeItem recipe={item} />
-      </TouchableOpacity>
+        <TouchableOpacity onPress={() => showDetail(item)}>
+          <RecipeItem recipe={item} />
+        </TouchableOpacity>
       );
     }} />
     </SafeAreaView>
