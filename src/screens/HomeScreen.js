@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, FlatList, SafeAreaView } from 'react-native';
+import { StyleSheet, FlatList, SafeAreaView, TouchableOpacity } from 'react-native';
 import RecipeItem from '../components/RecipeItem';
 
 const HomeScreen = ({ navigation }) => {
